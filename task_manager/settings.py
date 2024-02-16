@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&ia$n__oazy*e^90h4yo-=e2%7izak%#52r$jxxylg!x*%w1$u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh' , '127.0.0.1']
 
 
 # Application definition
@@ -79,10 +79,21 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'DE*ecAgdc4aGcDBg1*cccacD-22Eaddf',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '39570'
     }
 }
 
@@ -126,6 +137,10 @@ STATIC_URL = 'static/'
 # settings.py
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'tasks/static'),
+]
+
+STATICFILES_ROOT = [
+    os.path.join(BASE_DIR, 'staticfiles_build', 'tasks/static'),
 ]
 
 

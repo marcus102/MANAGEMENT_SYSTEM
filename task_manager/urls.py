@@ -17,10 +17,12 @@ Including another URLconf
 # task_manager/urls.py
 from django.contrib import admin
 from django.urls import include, path
+from task_manager import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tasks.urls')),
 ]
 
-
+urlpatterns += static(settings.STATIC_URL, documents_root=settings.STATICFILES_ROOT)
