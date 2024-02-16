@@ -6,11 +6,10 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseForbidden
 
 
 def home(request):
-    return render(request, 'tasks/home.html')
+    return render(request, 'home.html')
 
 
 @login_required(login_url='login')
@@ -28,7 +27,7 @@ def task_list(request):
     if priority:
         tasks = tasks.filter(priority=priority)
 
-    return render(request, 'tasks/task_list.html', {'tasks': tasks, 'status': status, 'priority': priority})
+    return render(request, 'task_list.html', {'tasks': tasks, 'status': status, 'priority': priority})
 
 
 @login_required(login_url='login')
@@ -42,7 +41,7 @@ def create_task(request):
             return redirect('task_list')
     else:
         form = TaskForm()
-    return render(request, 'tasks/create_task.html', {'form': form})
+    return render(request, 'create_task.html', {'form': form})
 
 
 @login_required(login_url='login')
@@ -66,12 +65,12 @@ def update_task(request, task_id):
     else:
         form = TaskForm(instance=task)
 
-    return render(request, 'tasks/update_task.html', {'form': form, 'task': task})
+    return render(request, 'update_task.html', {'form': form, 'task': task})
 
 
 def task_details(request, task_id):
     task = get_object_or_404(Task, id=task_id)
-    return render(request, 'tasks/task_details.html', {'task': task})
+    return render(request, 'task_details.html', {'task': task})
 
 
 def signup(request):
@@ -89,7 +88,7 @@ def signup(request):
     else:
         form = UserCreationForm()
 
-    return render(request, 'tasks/signup.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 
 def login(request):
@@ -115,4 +114,4 @@ def login(request):
     else:
         form = AuthenticationForm(request)
 
-    return render(request, 'tasks/login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})

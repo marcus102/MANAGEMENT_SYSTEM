@@ -1,6 +1,6 @@
 <!-- tasks/templates/tasks/task_list.html -->
 
-{% extends 'tasks/base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Task List{% endblock %}
 
@@ -8,8 +8,8 @@
 
 {% block content %}
   <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/task_list.css' %}">
-    <script type="text/javascript" src="{% static 'tasks/scripts/task_list_script.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/task_list.css' %}">
+    <script type="text/javascript" src="{% static 'scripts/task_list_script.js' %}"></script>
     <meta name="csrf-token" content="{% csrf_token %}">
   </head>
   <style>
