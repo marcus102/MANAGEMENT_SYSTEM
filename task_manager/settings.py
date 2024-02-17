@@ -136,11 +136,11 @@ STATIC_URL = 'static/'
 
 # settings.py
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Add this line
+    os.path.join(BASE_DIR, 'static/'),  # Add this line
 ]
 
 STATICFILES_ROOT = [
-    os.path.join(BASE_DIR, 'staticfiles_build', 'static'),
+    os.path.join(BASE_DIR, 'staticfiles_build', 'static/'),
 ]
 
 # Default primary key field type
