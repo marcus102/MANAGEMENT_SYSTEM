@@ -132,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 # settings.py
 STATICFILES_DIRS = [
@@ -142,24 +142,6 @@ STATICFILES_DIRS = [
 STATICFILES_ROOT = [
     os.path.join(BASE_DIR, 'staticfiles_build', 'static'),
 ]
-
-
-
-
-
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# TEMPLATE_DIRS = [
-#     os.path.join(BASE_DIR, 'templates'),  # Add this line if it's not there
-#     # Add any other template directories if necessary
-# ]
-
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),  # Add this line if it's not there
-#     # Add any other static directories if necessary
-# ]
-
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
