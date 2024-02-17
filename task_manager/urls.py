@@ -25,4 +25,4 @@ urlpatterns = [
     path('', include('tasks.urls')),
 ]
 
-urlpatterns += static(settings.STATIC_URL, documents_root=settings.STATICFILES_ROOT)
+# urlpatterns += static(settings.STATIC_URL, documents_root=settings.STATICFILES_ROOT)
